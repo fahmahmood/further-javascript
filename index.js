@@ -1,10 +1,9 @@
 window.onload = function() {
-list = new ToDoList();
-list.addItem('Run');
-list.addItem('Go Shopping');
+  list = new ToDoList(ToDoItem, Mustache);
+}
 
-var output = list.render();
-console.log(output);
-
-document.getElementById('list').innerHTML = output;
+document.getElementById('addTask').onclick = function addTask() {
+      console.log('event!')
+      list.addItem(document.getElementById('hello').value);
+      document.getElementById('list').innerHTML = list.render();
 }

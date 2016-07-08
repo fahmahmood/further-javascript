@@ -1,16 +1,10 @@
 var expect = require("chai").expect;
-var ToDoItem = require("../src/todoitem");
-
-
-
+var ToDoItem = require("../src/todoitem").ToDoItem;
 
   describe('ToDoItem', function(){
 
-  var toDoItem;
-
   beforeEach(function(){
-  toDoItem = new ToDoItem('Eat breakfast');
-
+    toDoItem = new ToDoItem('Eat breakfast');
   });
 
     describe('#setTask', function(){
@@ -22,7 +16,6 @@ var ToDoItem = require("../src/todoitem");
 
     describe('#viewTask', function() {
       it('should be able to view tasks', function() {
-
         toDoItem.setTask('Breakfast')
         expect(toDoItem.viewTask()).to.equal('Breakfast');
       });
@@ -32,7 +25,6 @@ var ToDoItem = require("../src/todoitem");
       it('marks a complete task', function(){
         toDoItem.completeTask();
         expect(toDoItem.complete).to.equal(true)
-
       });
     });
   });
